@@ -26,7 +26,9 @@ class ReactStickyNotes extends Component {
 			items: getNotes(props.colorCodes, props.notes)
 		};
 	}
-componentWillReceiveProps(nextProps) {
+ 		componentDidUpdate(nextProps){
+           // Desired operations: ex setting state
+            {
 		console.log('componentWillReceiveProps', nextProps);
 		if (this.props !== nextProps) {
 		 this.setState({items:getNotes(nextProps.colorCodes,nextProps.notes)});
