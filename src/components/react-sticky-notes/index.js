@@ -26,6 +26,12 @@ class ReactStickyNotes extends Component {
 			items: getNotes(props.colorCodes, props.notes)
 		};
 	}
+componentWillReceiveProps(nextProps) {
+		console.log('componentWillReceiveProps', nextProps);
+		if (this.props !== nextProps) {
+		 this.setState({items:getNotes(nextProps.colorCodes,nextProps.notes)});
+		}
+	   }
 	componentDidMount(){
 		if(this.props.useCSS){
 			require('./index.scss');
